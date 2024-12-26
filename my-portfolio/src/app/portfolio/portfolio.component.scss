@@ -1,0 +1,140 @@
+:root {
+  --primary-color: #7928CA;
+  --secondary-color: #FF0080;
+  --text-color: #2D3748;
+  --light-text: #ffffff;
+  --accent-color: #00DFD8;
+}
+
+.portfolio-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7928CA 0%, #FF0080 100%);
+  padding: 2rem 1rem;
+  color: var(--light-text);
+
+  h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 3rem;
+    background: linear-gradient(to right, #fff, #00DFD8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 3px;
+      background-color: var(--accent-color);
+      box-shadow: 0 0 10px rgba(0, 223, 216, 0.5);
+    }
+  }
+
+  h2 {
+    color: var(--light-text);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+      box-shadow: 0 0 10px rgba(0, 223, 216, 0.5);
+    }
+  }
+}
+
+.card {
+  transition: all 0.3s ease;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .card-body {
+    padding: 2rem;
+  }
+
+  .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-text {
+    color: var(--light-text);
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  
+  &.bg-primary {
+    background-color: var(--accent-color) !important;
+    color: var(--text-color);
+  }
+  
+  &.bg-secondary {
+    background-color: var(--secondary-color) !important;
+  }
+  
+  &.bg-info {
+    background-color: var(--primary-color) !important;
+  }
+  
+  &.bg-success {
+    background: #00DFD8 !important;
+    color: var(--text-color);
+  }
+  
+  &.bg-warning {
+    background: linear-gradient(45deg, #FF0080, #7928CA) !important;
+    color: var(--light-text) !important;
+  }
+}
+
+// Media queries for responsive design
+@media (max-width: 768px) {
+  .portfolio-container {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .card {
+    .card-body {
+      padding: 1.5rem;
+    }
+  }
+}

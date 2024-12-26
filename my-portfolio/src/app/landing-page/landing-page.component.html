@@ -1,20 +1,25 @@
 <div class="landing-container container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center py-5">
-  <div class="header text-center mb-5">
-    <h1 class="display-2 fw-bold text-primary mb-3">Welcome to My Portfolio</h1>
-    <p class="lead fs-3 text-secondary">Full Stack Developer</p>
-  </div>
-  
-  <div class="intro mb-5">
-    <p class="fs-4 mb-2">Hi, I'm Palak Sharma</p>
-    <p class="fs-4 text-muted">I create beautiful and functional web applications</p>
-  </div>
+  <div class="content-wrapper text-center">
+    <div class="header text-center mb-5">
+      <h1 class="text-primary mb-3">Welcome to My Portfolio</h1>
+      <div class="subtitle">
+        <p class="lead fs-3 mb-0" style="color: var(--accent-color)">Full Stack Developer</p>
+        <div class="underline mx-auto"></div>
+      </div>
+    </div>
+    
+    <div class="intro mb-5">
+      <p class="fs-4 mb-2" style="color: var(--accent-color)">Hi, I'm Palak Sharma</p>
+      <p class="fs-4" style="color: var(--accent-color)">I create beautiful and functional web applications</p>
+    </div>
 
-  <div class="cta d-flex gap-3">
-    <button class="btn btn-primary btn-lg px-4 py-3 shadow-sm">
-      <i class="bi bi-code-slash me-2"></i>View My Work
-    </button>
-    <button class="btn btn-success btn-lg px-4 py-3 shadow-sm">
-      <i class="bi bi-envelope me-2"></i>Contact Me
-    </button>
+    <div class="cta d-flex gap-3">
+      <button class="btn btn-primary btn-lg px-4 py-3" (click)="navigateToPortfolio()">
+        <i class="bi bi-code-slash me-2"></i>View My Work
+      </button>
+      <button class="btn btn-outline-primary btn-lg px-4 py-3">
+        <i class="bi bi-envelope me-2"></i>Contact Me
+      </button>
+    </div>
   </div>
 </div>

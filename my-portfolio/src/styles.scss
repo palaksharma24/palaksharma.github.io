@@ -1,65 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'bootstrap/scss/bootstrap' as bootstrap;
 @use 'bootstrap-icons/font/bootstrap-icons.css' as icons;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
-  --gradient-start: #e8edf5;
-  --gradient-end: #b0c4e3;
+  --primary-color: #7928CA;
+  --secondary-color: #FF0080;
+  --text-color: #2D3748;
+  --light-text: #ffffff;
+  --accent-color: #00DFD8;
+  --gradient-primary: linear-gradient(135deg, #7928CA 0%, #FF0080 100%);
+  --gradient-accent: linear-gradient(to right, #fff, #00DFD8);
 }
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'Inter', var(--bs-body-font-family);
   background-color: var(--bs-body-bg);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-/* Custom gradient background with overlay for better contrast */
-.landing-container {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-  }
-}
-
-/* Enhanced button styles */
+/* Global button styles */
 .btn {
-  transition: transform 0.2s, box-shadow 0.2s;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   letter-spacing: 0.5px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
   
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  &.btn-lg {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
   }
 
   &.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background: var(--accent-color);
+    border: none;
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 223, 216, 0.4);
+    
+    &:hover {
+      background: #00f5ee;
+      box-shadow: 0 6px 20px rgba(0, 223, 216, 0.6);
+    }
   }
 
-  &.btn-success {
-    background-color: #198754;
-    border-color: #198754;
+  &.btn-outline-primary {
+    border: 2px solid var(--accent-color);
+    color: var(--light-text);
+    
+    &:hover {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: var(--text-color);
+    }
   }
 }
 
-/* Text enhancements */
-.display-2 {
+/* Text styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .lead {
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Card styles */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Badge styles */
+.badge {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
