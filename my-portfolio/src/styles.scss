@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'bootstrap/scss/bootstrap' as bootstrap;
+@use 'bootstrap-icons/font/bootstrap-icons.css' as icons;
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --gradient-start: #e8edf5;
+  --gradient-end: #b0c4e3;
+}
+
+body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  background-color: var(--bs-body-bg);
+}
+
+/* Custom gradient background with overlay for better contrast */
+.landing-container {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+}
+
+/* Enhanced button styles */
+.btn {
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  &.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  &.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+  }
+}
+
+/* Text enhancements */
+.display-2 {
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.lead {
+  font-weight: 400;
+}
